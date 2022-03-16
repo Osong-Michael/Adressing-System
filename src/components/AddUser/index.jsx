@@ -118,6 +118,24 @@ const AddNewUser = () => {
                     </Form.Group>
                 </Row>
 
+                <Form.Group as={Col} controlId="profilepic" style={{ marginTop: 30}}>
+                    <Form.Label>Uplaod Profile Picture</Form.Label>
+                    <Form.Control
+                    type="file"
+                    name="profilepic"
+                    />
+                </Form.Group>
+
+                <Form.Group as={Col} controlId="description" style={{ marginTop: 30}}>
+                    <Form.Label>Description</Form.Label>
+                    <Form.Control
+                    as="textarea"
+                    rows={5}
+                    type="textarea"
+                    name="description"
+                    />
+                </Form.Group>
+
                 <Row style={{ marginTop: 30, width: '50%'}}>
                     <ButtonGroup>
                         <Button variant="primary">Add User</Button>

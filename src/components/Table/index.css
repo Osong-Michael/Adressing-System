@@ -1,0 +1,42 @@
+table {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+  
+table td,
+table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+table tr {
+    cursor: pointer;
+}
+  
+table tr:nth-child(even) {
+    background-color: #a7f8dd;
+}
+  
+table tr:hover {
+    background-color: #8ba59c;
+}
+
+:is(#sub-columns, thead) {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #01d28e;
+    color: white;
+}
+
+.btn {
+    border: 1px solid red;
+    background-color: #01d28e;
+    color: #fff;
+    border: 1px solid #01d28e;
+    margin: 20px 10px;
+    padding: 7px;
+    cursor: pointer;
+}
+  

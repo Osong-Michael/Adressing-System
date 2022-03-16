@@ -108,6 +108,14 @@ const AddNewUser = () => {
                         name="lat"
                         />
                     </Form.Group>
+
+                    <Form.Group as={Col} controlId="pluscodes">
+                        <Form.Label>Plus Codes</Form.Label>
+                        <Form.Control
+                        type="text"
+                        name="pluscodes"
+                        />
+                    </Form.Group>
                 </Row>
 
                 <Row style={{ marginTop: 30, width: '50%'}}>

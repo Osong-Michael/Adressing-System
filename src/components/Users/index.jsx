@@ -1,12 +1,14 @@
 import React, { useEffect, useState, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Container } from 'reactstrap';
+import { Container, Button } from 'reactstrap';
 import TableContainer from '../Table';
 
 import { getUsers } from '../../Redux/actions';
 
 
 const Users = () => {
+  let navigate = useNavigate();
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getUsers());
@@ -62,6 +64,18 @@ const Users = () => {
         <>
             {users.length && (
                 <Container style={{ marginTop: 100, marginBottom: 100 }}>
+                  <div className="my-5 add-btn-ctn">
+                    <h3>All Users</h3>
+                    <div className="add-btn">
+                      <Button
+                        variant="outline-secondary"
+                        onClick={() => navigate('/users/new-user')}
+                      >
+                        Add New User
+                      </Button>
+                    </div>
+                    <hr />
+                  </div>
                     <TableContainer columns={columns} data={users} />
                 </Container>
             )}

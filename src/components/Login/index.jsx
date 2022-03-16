@@ -39,6 +39,7 @@ class Login extends React.Component {
                             value={username}
                             required
                             onChange={this.handleChange}
+                            className="login-input"
                         />
                     </div>
                     <div className="input-container">
@@ -49,10 +50,11 @@ class Login extends React.Component {
                             value={password}
                             required
                             onChange={this.handleChange}
+                            className="login-input"
                         />
                     </div>
                     <div className="button-container">
-                        <input type="submit" />
+                        <input type="submit" className="login-btn"/>
                     </div>
                 </form>
                 </div>

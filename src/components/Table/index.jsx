@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useTable, useSortBy, useFilters, usePagination } from 'react-table';
 import { Table, Row, Col, Button, Input } from 'reactstrap';
@@ -48,7 +48,7 @@ const TableContainer = ({ columns, data }) => {
     }
 
     return (
-        <Fragment>
+        <div className="user-table">
             <Table bordered hover {...getTableProps()}>
             <thead>
                 {headerGroups.map((headerGroup) => (
@@ -79,12 +79,13 @@ const TableContainer = ({ columns, data }) => {
                 })}
             </tbody>
             </Table>
-            <Row style={{ maxWidth: 1000, margin: "0 auto", display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <Row className="table-btns">
                 <Col md={3}>
                     <Button
                         color="primary"
                         onClick={() => gotoPage(0)}
                         disabled={!canPreviousPage}
+                        style={{marginLeft: '90px'}}
                     >
                         {"<<"}
                     </Button>
@@ -97,17 +98,16 @@ const TableContainer = ({ columns, data }) => {
                         {"<"}
                     </Button>
                 </Col>
-                <Col md={2} style={{ marginTop: 7, marginRight: 7 }}>
+                <Col md={2}>
                     Page{" "}
                     <strong>
                         {pageIndex + 1} of {pageOptions.length}
                     </strong>
                 </Col>
-                <Col md={2} style={{ marginRight: 7 }}>
+                <Col md={2}>
                     <Input
                         type="number"
                         min={1}
-                        style={{ width: 70 }}
                         max={pageOptions.length}
                         defaultValue={pageIndex + 1}
                         onChange={onChangeInInput}
@@ -123,7 +123,7 @@ const TableContainer = ({ columns, data }) => {
                     </Input>
                 </Col>
                 <Col md={3}>
-                    <Button  onClick={nextPage} disabled={!canNextPage} style={{marginRight: '10px'}}>
+                    <Button  onClick={nextPage} disabled={!canNextPage}>
                         {">"}
                     </Button>
                     <Button
@@ -134,7 +134,7 @@ const TableContainer = ({ columns, data }) => {
                     </Button>
                 </Col>
             </Row>
-        </Fragment>
+        </div>
     );
 };
 

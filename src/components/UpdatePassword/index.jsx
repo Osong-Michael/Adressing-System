@@ -40,7 +40,7 @@ class ChangePassword extends React.Component {
                         />
                     </div>
                     <div className="button-container">
-                        <input type="submit" />
+                        <input type="submit" className='login-btn'/>
                     </div>
                 </form>
                 </div>

@@ -4,6 +4,7 @@ import Login from './components/Login';
 import ChangePassword from './components/UpdatePassword';
 import Users from './components/Users';
 import User from './components/User';
+import AddNewUser from './components/AddUser';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
           <Route path='/users' element={<Users />} />
           <Route path='/users/:userId' element={<User />} />
           <Route path='/change-password' element={<ChangePassword />} />
+          <Route path='/users/new-user' element={<AddNewUser />} />
         </Routes>
       </BrowserRouter>
     </div>

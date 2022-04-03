@@ -1,6 +1,32 @@
+:root {
+    --color-primary: #188780;
+    --color-secondary: #f78525;
+    --color-white: #fff;
+}
+
 body {
     margin-top:20px;
     color: #9b9ca1;
+}
+
+h3 {
+    color: var(--color-secondary);
+}
+
+
+.btn {
+    background-color: var(--color-primary) !important;
+    border-radius: 5px !important;
+    color: var(--color-white);
+    border: none !important;
+    margin: 20px 10px;
+    padding: 7px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #25aaa1 !important;
+    color: var(--color-white);
 }
 
 .home {
@@ -17,27 +43,25 @@ body {
     margin-top: 10px;
     cursor: pointer;
     font-size: 15px;
-    background: #01d28e;
-    border: 1px solid #01d28e;
-    color: #fff;
+    color: var(--color-white);
     padding: 10px 20px;
 }
 
-.login-btn:hover {
-    background: #6cf0c2;
-}
 
 .button-container {
     display: flex;
     justify-content: center;
 }
 
+:is(.login-form, .add-user-form, .user-table, .profile-ctn) {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 .login-form {
     width: 40%;
-    margin: 200px auto;
-    background-color: white;
+    margin: 150px auto;
+    background-color:  var(--color-white);
     padding: 2rem;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .list-container {
@@ -64,4 +88,30 @@ body {
     position: absolute;
     top: -20px;
     right: -10px;
+}
+
+
+.my-nav {
+    margin: 0 auto !important;
+}
+
+.table-body {
+    color: #333;
+}
+
+.users-number {
+    background: var(--color-primary) !important;
+}
+
+.inner h4 {
+    font-size: 35px;
+    font-weight: 800;
+}
+
+.icon i {
+    cursor: pointer;
+}
+
+.sign-out {
+    cursor: pointer;
 }

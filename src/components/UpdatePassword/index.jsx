@@ -26,7 +26,7 @@ class ChangePassword extends React.Component {
         const { password } = this.state;
         return (
             <div className="login-form">
-                <div className="title">Change Password</div>
+                <h3 className="title">Change Password</h3>
                 <div className="form">
                 <form onSubmit={this.handleSubmit}>
                     <div className="input-container">
@@ -40,7 +40,7 @@ class ChangePassword extends React.Component {
                         />
                     </div>
                     <div className="button-container">
-                        <input type="submit" className='login-btn'/>
+                        <input type="submit" className='btn login-btn' value="Change Password"/>
                     </div>
                 </form>
                 </div>

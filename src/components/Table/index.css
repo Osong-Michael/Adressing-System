@@ -15,7 +15,7 @@ table tr {
 }
   
 table tr:nth-child(even) {
-    background-color: #a7f8dd;
+    background-color: var(--color-primary);
 }
   
 table tr:hover {
@@ -24,7 +24,6 @@ table tr:hover {
 
 .user-table {
     padding: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .table-btns {
@@ -39,16 +38,7 @@ table tr:hover {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
-    background-color: #01d28e;
-    color: white;
-}
-
-.btn {
-    background-color: #01d28e !important;
-    color: #fff;
-    border: 1px solid #01d28e !important;
-    margin: 20px 10px;
-    padding: 7px;
-    cursor: pointer;
+    background-color: var(--color-primary);
+    color:  var(--color-white);
 }
   

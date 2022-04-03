@@ -102,10 +102,13 @@ const User = () => {
 												<i className="fas fa-fw fa-user position-absolute top-50 start-50 translate-middle text-secondary"></i>
 											</div>
 											{/* <!-- Profile Photo Buttons --> */}
-											<input type="file" id="customFile" name="file" hidden="" />
-											<br />
-											<label className="btn btn-success-soft btn-block">Upload</label>
-											<button type="button" className="btn btn-danger-soft">Remove</button>
+											<div className="upload-btns">
+												<label id="image-upload">
+													<i class="fa fa-2x fa-camera" />
+													<input type="file" id="customFile" name="file" />
+												</label>
+												<i className="fa fa-2x fa-circle-trash" />
+											</div>
 											{/* <!-- Content --> */}
 											<p className="text-muted mb-0" style={{ fontSize: '12px'}}><span className="me-1">Note:</span>Minimum size 300px x 300px</p>
 										</div>

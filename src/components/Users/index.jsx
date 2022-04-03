@@ -64,18 +64,16 @@ const Users = () => {
         <>
             {users.length && (
                 <Container style={{ marginTop: 100, marginBottom: 100 }}>
-                  <div className="my-5 add-btn-ctn">
-                    <h3>All Users</h3>
-                    <div className="add-btn">
-                      <Button
-                        variant="outline-secondary"
-                        onClick={() => navigate('/users/new-user')}
-                      >
-                        Add New User
-                      </Button>
+                  <div className="small-box bg-gradient-success users-number">
+                    <div className="inner">
+                      <h4>{users.length}</h4>
+                      <p>USERS</p>
                     </div>
-                    <hr />
+                    <div className="icon">
+                      <i className="fas fa-user-plus" onClick={() => navigate("/users/new-user")}/>
+                    </div>
                   </div>
+                  <hr style={{ marginTop: 50, marginBottom: 50 }}/>
                     <TableContainer columns={columns} data={users} />
                 </Container>
             )}

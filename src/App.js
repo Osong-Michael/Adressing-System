@@ -5,11 +5,13 @@ import ChangePassword from './components/UpdatePassword';
 import Users from './components/Users';
 import User from './components/User';
 import AddNewUser from './components/AddUser';
+import NavBar from './components/NavBar';
 
 const App = () => {
   return (
     <div className='home'>
       <BrowserRouter>
+      `<NavBar />
         <Routes>
           <Route exact path='/' element={<Login />} />
           <Route path='/login' element={<Login />} />

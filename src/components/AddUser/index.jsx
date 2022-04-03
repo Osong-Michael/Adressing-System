@@ -59,6 +59,14 @@ const AddNewUser = () => {
                     </Form.Group>
                 </Row>
 
+                <Form.Group as={Col} controlId="profilepic" style={{ marginTop: 30, padding: 10}}>
+                    <Form.Label>Upload Profile Picture</Form.Label>
+                    <Form.Control
+                    type="file"
+                    name="profilepic"
+                    />
+                </Form.Group>
+
                 <Form.Group controlId="formAddress" style={{ marginTop: 30}}>
                     <Form.Label>Full Address</Form.Label>
                     <Form.Control
@@ -117,14 +125,6 @@ const AddNewUser = () => {
                         />
                     </Form.Group>
                 </Row>
-
-                <Form.Group as={Col} controlId="profilepic" style={{ marginTop: 30}}>
-                    <Form.Label>Uplaod Profile Picture</Form.Label>
-                    <Form.Control
-                    type="file"
-                    name="profilepic"
-                    />
-                </Form.Group>
 
                 <Form.Group as={Col} controlId="description" style={{ marginTop: 30}}>
                     <Form.Label>Description</Form.Label>

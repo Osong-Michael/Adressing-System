@@ -66,7 +66,7 @@ const TableContainer = ({ columns, data }) => {
                 ))}
             </thead>
 
-            <tbody {...getTableBodyProps()}>
+            <tbody {...getTableBodyProps()} className="table-body">
                 {page.map(row => {
                     prepareRow(row);
                 return (
@@ -85,7 +85,7 @@ const TableContainer = ({ columns, data }) => {
                         color="primary"
                         onClick={() => gotoPage(0)}
                         disabled={!canPreviousPage}
-                        style={{marginLeft: '90px'}}
+                        style={{marginLeft: '85px'}}
                     >
                         {"<<"}
                     </Button>
@@ -93,7 +93,6 @@ const TableContainer = ({ columns, data }) => {
                         color="primary"
                         onClick={previousPage}
                         disabled={!canPreviousPage}
-                        style={{marginLeft: '10px'}}
                     >
                         {"<"}
                     </Button>

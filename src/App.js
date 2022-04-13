@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './components/Login';
 import ChangePassword from './components/UpdatePassword';
 import Users from './components/Users';
@@ -13,12 +13,13 @@ const App = () => {
       <BrowserRouter>
       `<NavBar />
         <Routes>
-          <Route exact path='/' element={<Login />} />
+          <Route exact path='/' element={<Users />} />
           <Route path='/login' element={<Login />} />
           <Route path='/users' element={<Users />} />
           <Route path='/users/:userId' element={<User />} />
           <Route path='/change-password' element={<ChangePassword />} />
           <Route path='/users/new-user' element={<AddNewUser />} />
+          <Route path="*" element={<Users />} />
         </Routes>
       </BrowserRouter>
     </div>

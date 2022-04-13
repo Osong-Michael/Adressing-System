@@ -1,10 +1,10 @@
-import React, { useEffect, useState, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useMemo } from 'react';
+import { useNavigate, Navigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { Container, Button } from 'reactstrap';
+import { Container } from 'reactstrap';
 import TableContainer from '../Table';
 
-import { getUsers } from '../../Redux/actions';
+import { getUsers, checkStatus } from '../../Redux/actions';
 
 
 const Users = () => {
@@ -12,9 +12,11 @@ const Users = () => {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getUsers());
+        dispatch(checkStatus())
     }, []);
 
     const users = useSelector(state => state.users);
+    const token = useSelector(state => state.token);
 
     const columns = useMemo(
         () => [
@@ -22,8 +24,12 @@ const Users = () => {
             Header: 'Client Details',
             columns: [
               {
-                Header: 'Name',
-                accessor: 'name',
+                Header: 'First Name',
+                accessor: 'firstName',
+              },
+              {
+                Header: 'Last Name',
+                accessor: 'lastName',
               },
               {
                 Header: 'User Name',
@@ -33,10 +39,10 @@ const Users = () => {
                 Header: 'Email',
                 accessor: 'email',
               },
-              {
-                Header: 'Phone Number',
-                accessor: 'phone',
-              }
+              // {
+              //   Header: 'Phone Number',
+              //   accessor: 'phone',
+              // }
             ],
           },
           {
@@ -44,15 +50,16 @@ const Users = () => {
             columns: [
               {
                 Header: 'Region',
-                accessor: 'address.city',
+                accessor: 'region',
               },
               {
-                Header: 'Town',
-                accessor: 'address.street',
+                Header: 'City',
+                accessor: 'city',
               },
               {
-                Header: 'Quarter ',
-                accessor: 'address.suite',
+                Header: 'Address ',
+                accessor: 'address',
+                disableFilters: true
               },
             ],
           }
@@ -62,21 +69,22 @@ const Users = () => {
 
     return (
         <>
-            {users.length && (
-                <Container style={{ marginTop: 100, marginBottom: 100 }}>
-                  <div className="small-box bg-gradient-success users-number">
-                    <div className="inner">
-                      <h4>{users.length}</h4>
-                      <p>USERS</p>
-                    </div>
-                    <div className="icon">
-                      <i className="fas fa-user-plus" onClick={() => navigate("/users/new-user")}/>
-                    </div>
+          {!token && <Navigate to='/login' replace />}
+          {users.length && (
+              <Container style={{ marginTop: 100, marginBottom: 100 }}>
+                <div className="small-box bg-gradient-success users-number">
+                  <div className="inner">
+                    <h4>{users.length}</h4>
+                    <p>USERS</p>
                   </div>
-                  <hr style={{ marginTop: 50, marginBottom: 50 }}/>
-                    <TableContainer columns={columns} data={users} />
-                </Container>
-            )}
+                  <div className="icon">
+                    <i className="fas fa-user-plus" onClick={() => navigate("/users/new-user")}/>
+                  </div>
+                </div>
+                <hr style={{ marginTop: 50, marginBottom: 50 }}/>
+                  <TableContainer columns={columns} data={users} />
+              </Container>
+          )}
         </>
     )
 };

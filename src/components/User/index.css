@@ -1,3 +1,8 @@
+.profile-ctn {
+    margin-top: 50px;
+    padding: 20px;
+}
+
 .bg-secondary-soft {
     background-color: rgba(208, 212, 217, 0.1) !important;
 }
@@ -64,15 +69,25 @@
 }
 
 .map-section {
-    height: 425px;
+    height: 650px;
     position: relative;
+    margin-top: -7px;
 }
 
 .upload-btns {
-    border: 1px solid red;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 25px;
+}
+
+.remove-pic {
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.profile-pic img {
+    width: 100%;
 }
 
 #customFile {
@@ -81,4 +96,8 @@
 
 #image-upload {
     cursor: pointer;
+}
+
+#image-upload i {
+    padding-top: 18px;
 }

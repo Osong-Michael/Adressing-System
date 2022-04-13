@@ -1,6 +1,6 @@
 .add-user-form {
     max-width: 1000px;
-    margin: 40px auto;
+    margin: 50px auto;
     padding: 20px;
 }
 
@@ -11,4 +11,22 @@
 
 .go-back:hover {
     background-color: #a16b3f !important;
+}
+
+.pic-add-user {
+    margin: 40px auto;
+}
+
+.pic-upload .square {
+    height: 180px !important;
+    width: 180px !important;
+    margin: auto;
+    vertical-align: middle;
+    border: 1px solid #e5dfe4 !important;
+    background-color: var(--color-white) !important;
+    border-radius: 5px;
+}
+
+#select option:first {
+    color: #999;
 }

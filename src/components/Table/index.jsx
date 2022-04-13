@@ -70,7 +70,7 @@ const TableContainer = ({ columns, data }) => {
                 {page.map(row => {
                     prepareRow(row);
                 return (
-                    <tr {...row.getRowProps()} onClick={() => navigate(`/users/${row.original.id}`)} >
+                    <tr {...row.getRowProps()} onClick={() => navigate(`/users/${row.original._id}`)} >
                     {row.cells.map((cell) => {
                         return <td {...cell.getCellProps()}>{cell.render('Cell')}</td>;
                     })}

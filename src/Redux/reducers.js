@@ -2,6 +2,7 @@ import {
     LOGGING_IN,
     LOGGING_IN_SUCCESFUL,
     LOGGING_IN_FAILURE,
+    CHECK_LOGIN_STATUS_START,
     CHECK_LOGIN_STATUS_FAIL,
     CHECK_LOGIN_STATUS_SUCCESS,
     LOG_OUT_USER,
@@ -12,7 +13,7 @@ import {
 
 const initState = {
     users:[],
-    user:{},
+    token: '',
     loading: false,
     error: null,
 };
@@ -45,7 +46,7 @@ const usersReducer = (state = initState, action) => {
         return {
           ...state,
           loading: false,
-          user: action.user,
+          token: action.token,
         };
       case LOGGING_IN_FAILURE:
         return {
@@ -53,10 +54,35 @@ const usersReducer = (state = initState, action) => {
           loading: false,
           error: action.error,
         };
+      case CHECK_LOGIN_STATUS_START:
+        return {
+          ...state,
+          loading: true,
+        };
+      case CHECK_LOGIN_STATUS_SUCCESS:
+        return {
+          ...state,
+          loading: false,
+          token: action.token,
+        };
+      case CHECK_LOGIN_STATUS_FAIL:
+        return {
+          ...state,
+          loading: false,
+          token: '',
+        };
+      case LOG_OUT_USER:
+        return {
+          ...state,
+          token: '',
+        };
       default:
         return state;
     };
 };
+
+export const loadingStatus = state => state.loading;
+export const getToken = state => state.token;
 
 
 export default usersReducer;
